@@ -1,2 +1,7 @@
-# promptworker
-cleans prompts from duplicates and other garbage
+# Guide To Making Custom Nodes in ComfyUI 
+
+### [Contents Page]
+
+
+
+
