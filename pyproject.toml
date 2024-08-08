@@ -9,6 +9,6 @@ Repository = "https://github.com/lenskikh/ComfyUI-Prompt-Worker"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "Mikhail Lenskikh"
 DisplayName = "ComfyUI-Prompt-Worker"
 Icon = ""
