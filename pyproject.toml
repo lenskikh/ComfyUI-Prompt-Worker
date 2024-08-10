@@ -1,5 +1,5 @@
 [project]
-name = "comfyui-prompt-worker"
+name = "ComfyUI Prompt Worker"
 description = "Node:Prompt Worker. A text manipulation node for postprocessing of prompt."
 version = "1.0.1"
 license = {file = "LICENSE"}
@@ -9,6 +9,6 @@ Repository = "https://github.com/lenskikh/ComfyUI-Prompt-Worker"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = "Mikhail Lenskikh"
-DisplayName = "ComfyUI-Prompt-Worker"
+PublisherId = "promptworker"
+DisplayName = "ComfyUI Prompt Worker"
 Icon = ""
