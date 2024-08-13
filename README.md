@@ -1,4 +1,4 @@
-# Propmt Worker
+# Prompt Worker
 
 ![Screenshot](/workflows/scr.png)
 
