@@ -21,7 +21,6 @@ class PromptWorker:
 
     def clean_prompt(self, positive, negative_char, blacklist, alphabetical_sorting):
 
-        positive = positive.lower()
         blacklist = blacklist.lower()
 
         #delete any weight like 1.3 and etc.
@@ -32,8 +31,11 @@ class PromptWorker:
             positive = re.sub(r':\d+', '', positive)
         # with space symbol token: 1.3
         if ":" in positive:
-            positive = re.sub(r':\s*\d+\.\d+', '', positive)           
+            positive = re.sub(r':\s*\d+\.\d+', '', positive)  
+        if "lora" in positive:
+            positive = re.sub(r'<lora:[^>]*>', '', positive)                        
 
+        positive = positive.lower()
         PromptWorker.text2 = ""
 
         negative_char = negative_char.split(",")
@@ -53,7 +55,10 @@ class PromptWorker:
         black_list = blacklist.split(",")
         for blackwords in black_list:
             blackwords = blackwords.strip()
-            positive = positive.replace(blackwords, "")                                               
+            positive = positive.replace(blackwords, "")     
+            if "|" in blackwords:
+                replace_words = blackwords.split("|")
+                positive = positive.replace(replace_words[0], replace_words[1]) 
 
         self.unique(positive, alphabetical_sorting)
         return (PromptWorker.text2,)
