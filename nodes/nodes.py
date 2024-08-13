@@ -21,6 +21,9 @@ class PromptWorker:
 
     def clean_prompt(self, positive, negative_char, blacklist, alphabetical_sorting):
 
+        positive = positive.lower()
+        blacklist = blacklist.lower()
+
         #delete any weight like 1.3 and etc.
         if ":" in positive:
             positive = re.sub(r':\d+\.\d+', '', positive)

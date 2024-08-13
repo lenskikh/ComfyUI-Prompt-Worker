@@ -1,0 +1,534 @@
+{
+  "last_node_id": 18,
+  "last_link_id": 22,
+  "nodes": [
+    {
+      "id": 16,
+      "type": "easy negative",
+      "pos": [
+        200,
+        544
+      ],
+      "size": {
+        "0": 380,
+        "1": 160
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 0
+        }
+      ],
+      "title": "Negative symbols",
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "!,?"
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 6,
+      "type": "easy positive",
+      "pos": [
+        610,
+        520
+      ],
+      "size": {
+        "0": 380,
+        "1": 180
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "label": "positive",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        "a woman! detailed? face in a white sweater posing for a photo, open mounth, teeth, smile, black eyes, gorgeous model, cute korean actress, photo of slim girl model, beautiful woman, popular makeup, sea background, portrait, close up, cute Chinese"
+      ],
+      "color": "#346434",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "easy a1111Loader",
+      "pos": [
+        610,
+        70
+      ],
+      "size": {
+        "0": 380,
+        "1": 370
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null,
+          "label": "optional_lora_stack",
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 22,
+          "widget": {
+            "name": "positive"
+          },
+          "slot_index": 1,
+          "label": "positive"
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 4,
+          "widget": {
+            "name": "negative"
+          },
+          "slot_index": 2,
+          "label": "negative"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "label": "vae"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "dreamshaperXL_lightningDPMSDE.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 8,
+      "type": "easy preSampling",
+      "pos": [
+        1015,
+        71
+      ],
+      "size": {
+        "0": 360,
+        "1": 242
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 5,
+          "label": "pipe"
+        },
+        {
+          "name": "image_to_latent",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image_to_latent"
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "link": null,
+          "label": "latent"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "label": "pipe",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        6,
+        2,
+        "dpmpp_sde",
+        "karras",
+        1,
+        1009139948769053,
+        "randomize"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "ShowText|pysssss",
+      "pos": [
+        235,
+        70
+      ],
+      "size": {
+        "0": 346.8851013183594,
+        "1": 243.44845581054688
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 21,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            22
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        [
+          "a woman detailed face in a white sweater posing for a photo, beautiful woman, black eyes, close up, cute, cute  actress, gorgeous model, open mounth, photo of slim girl model, popular makeup, portrait, sea background, smile, teeth, "
+        ],
+        "a woman detailed face in a white sweater posing for a photo, beautiful woman, black eyes, close up, cute, cute  actress, gorgeous model, open mounth, photo of slim girl model, popular makeup, portrait, sea background, smile, teeth, "
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Prompt Worker",
+      "pos": [
+        264,
+        361
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 19,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative_char",
+          "type": "STRING",
+          "link": 17,
+          "widget": {
+            "name": "negative_char"
+          }
+        },
+        {
+          "name": "blacklist",
+          "type": "STRING",
+          "link": 18,
+          "widget": {
+            "name": "blacklist"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Prompt Worker"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "True"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "easy negative",
+      "pos": [
+        202,
+        752
+      ],
+      "size": {
+        "0": 380,
+        "1": 160
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "label": "negative",
+          "slot_index": 0
+        }
+      ],
+      "title": "Blacklist words",
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "chinese, korean, south, "
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 7,
+      "type": "easy negative",
+      "pos": [
+        612,
+        751
+      ],
+      "size": {
+        "0": 380,
+        "1": 160
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "label": "negative"
+        }
+      ],
+      "title": "Standart Negative",
+      "properties": {
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "text, watermark, worst quality, bad hands, embedding:badhandv4, "
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "easy kSampler",
+      "pos": [
+        1016,
+        361
+      ],
+      "size": {
+        "0": 360,
+        "1": 550
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 6,
+          "label": "pipe"
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null,
+          "shape": 3,
+          "label": "pipe"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Save",
+        0,
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      7,
+      0,
+      5,
+      2,
+      "STRING"
+    ],
+    [
+      5,
+      5,
+      0,
+      8,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      6,
+      8,
+      0,
+      9,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      17,
+      16,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      18,
+      17,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      19,
+      6,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      21,
+      15,
+      0,
+      18,
+      0,
+      "STRING"
+    ],
+    [
+      22,
+      18,
+      0,
+      5,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "note": "<p>在<b>LoadImage (base64)</b>节点上右键可切换成默认加载图片节点</p>",
+    "ds": {
+      "scale": 0.8264462809917354,
+      "offset": [
+        13.019430001708137,
+        103.78658771154434
+      ]
+    }
+  },
+  "version": 0.4
+}
