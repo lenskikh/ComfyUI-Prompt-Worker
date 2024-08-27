@@ -19,7 +19,10 @@ Workflow can be found in the workflows directory
 
 A small feature: put a dash in the token and you will temporarily disable it.
 
-Update from August 13:
+Updated August 27:
+* Added scheme for GGUF(Flux). With a little adaptation you can use NF4.
+
+Updated August 13:
 * All tokens are converted to lower case, that is, BW and bw are the same thing for the plugin.
 * Added a new scheme in the workflows directory. It cleans the prompt before generation.
 * Added word replacement function. In the blacklist, write the word you want to replace, then put a vertical line followed by the token that you want to see in the prompt. For example, <code>sea|beach with palms</code> sea will be replaced with beach with palms
@@ -47,6 +50,9 @@ Update from August 13:
 Воркфлоу можете найти в директории workflows
 
 Небольшая фича, поставьте знак тире - в токене и вы его временно отключите.
+
+Обновление от 27 августа: 
+* Добавлена схема для GGUF. Немного адаптировав её, вы сможете использовать NF4
 
 Обновление от 13 августа: 
 * Все токены конвертируются в нижний регистр, то есть BW и bw - это одно и тоже для плагина.
