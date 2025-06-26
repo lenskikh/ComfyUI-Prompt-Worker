@@ -19,10 +19,13 @@ Workflow can be found in the workflows directory
 
 A small feature: put a dash in the token and you will temporarily disable it.
 
-Updated August 27:
+Updated June 25, 2025
+* Minor update. Add scheme with translator node.
+
+Updated August 27, 2024:
 * Added scheme for GGUF(Flux). With a little adaptation you can use NF4.
 
-Updated August 13:
+Updated August 13, 2024:
 * All tokens are converted to lower case, that is, BW and bw are the same thing for the plugin.
 * Added a new scheme in the workflows directory. It cleans the prompt before generation.
 * Added word replacement function. In the blacklist, write the word you want to replace, then put a vertical line followed by the token that you want to see in the prompt. For example, <code>sea|beach with palms</code> sea will be replaced with beach with palms
@@ -51,10 +54,13 @@ Updated August 13:
 
 Небольшая фича, поставьте знак тире - в токене и вы его временно отключите.
 
-Обновление от 27 августа: 
+Обновление от 25 июля 2025Ж
+* Небольшое обновление. Добавлена схема, где присувствует нода автоматического перевода. 
+
+Обновление от 27 августа 2024: 
 * Добавлена схема для GGUF. Немного адаптировав её, вы сможете использовать NF4
 
-Обновление от 13 августа: 
+Обновление от 13 августа 2024: 
 * Все токены конвертируются в нижний регистр, то есть BW и bw - это одно и тоже для плагина.
 * Добавлена новая схема в директории workflows. Она чистит промпт перед генерацией.
 * Добавлена функция замены слов. В blacklist пишите слово, которое хотите заменить, затем ставите вертикальную черту после которой идёт токен, который вы хотите видеть в промпте. Например <code>sea|beach with palms</code> sea заменится на beach with palms
