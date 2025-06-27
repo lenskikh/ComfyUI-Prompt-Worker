@@ -19,6 +19,10 @@ Workflow can be found in the workflows directory
 
 A small feature: put a dash in the token and you will temporarily disable it.
 
+Updated June 27, 2025:
+* Added styles: weather, photographic style, cinematic style
+* Added a new diagram to the workflows folder that shows how you can combine translation and handwritten prompts
+
 Updated June 25, 2025
 * Minor update. Add scheme with translator node.
 
@@ -54,7 +58,11 @@ Updated August 13, 2024:
 
 Небольшая фича, поставьте знак тире - в токене и вы его временно отключите.
 
-Обновление от 25 июля 2025Ж
+Обновление от 27 июня 2025:
+* Добавлены стили: погода, фотографический стиль, кинематографический стиль
+* В папке workflows добавлена новая схема, которая показывает, как можно объеденить перевод и собственноручный промпт
+
+Обновление от 25 июня 2025:
 * Небольшое обновление. Добавлена схема, где присувствует нода автоматического перевода. 
 
 Обновление от 27 августа 2024: 
