@@ -1,7 +1,7 @@
 # Prompt Worker
 
 ![Screenshot](/workflows/scr.png)
-![Screenshot](/workflows/scr2.png)
+![Screenshot](/workflows/scr_gguf.png)
 
 ### [English]
 
