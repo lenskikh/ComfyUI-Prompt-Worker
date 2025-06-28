@@ -8,15 +8,14 @@ class PromptWorker:
     @classmethod
     def INPUT_TYPES(cls):
 
-        type_of_weather = ("Off", "Sunny", "Cloudy",  "Partly cloudy", "Rainy", "Snowy", "Windy", "Foggy", "Stormy", "Hail", "Sleet")
-        Photography_Styles = ("Off", "Portrait Photography", "Landscape Photography", "Street Photography", "Fashion Photography", 
-                              "Documentary Photography", "Macro Photography", "Black and White", "Abstract Photography", "Artistic Photography", 
-                              "Minimalist Photography", "Night Photography", "High contrast", "Low contrast")
-        Cinematography_Styles = ("Off","Film Noir, dramatic shadows", "Neo-Noir", "German Expressionism, exaggerated shadows", 
-                                 "documentary-like lighting and framing", "Surrealism, Dreamlike, illogical visuals", 
-                                 "Wes Anderson Style", "Symmetrical framing", "pastel colors", "quirky aesthetics", "Blockbuster style", 
-                                 "dynamic shots", "Raw, unfiltered storytelling", "French New Wave", "Experimental style", "jump cuts style", 
-                                 "Soviet Montage", "Fast-paced editing for emotional" )
+        type_of_weather = ("Off", "cloudy", "foggy", "hail", "partly cloudy", "rainy", "sleet", "snowy", "stormy", "sunny", "windy")
+        Photography_Styles = ("Off", "abstract photography", "artistic photography", "black and white", "documentary photography", 
+                              "fashion photography", "high contrast", "landscape photography", "low contrast", "macro photography", 
+                              "minimalist photography", "night photography", "portrait photography", "street photography")
+        Cinematography_Styles = ("Off","blockbuster style", "dramatic shadows", "dreamlike", "dynamic shots", "emotional", 
+                                 "exaggerated shadows", "experimental style", "film noir", "illogical visuals", "jump cuts style", 
+                                 "lighting and framing", "neo-noir", "new wave style", "pastel colors", "raw", "surrealism", 
+                                 "symmetrical framing", "unfiltered storytelling", "wes anderson style" )
               
         return {"required": {
                     "positive": ("STRING", {"forceInput": True}),
@@ -50,7 +49,8 @@ class PromptWorker:
         if "lora" in positive:
             positive = re.sub(r'<lora:[^>]*>', '', positive)                        
 
-        positive = positive.lower()
+        positive = positive.lower().strip()
+        
         PromptWorker.text2 = ""
 
         negative_char = negative_char.split(",")
@@ -76,7 +76,8 @@ class PromptWorker:
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
         self.unique(positive, alphabetical_sorting,weather,photography_style,Cinematography_Styles)
-        return (PromptWorker.text2,)
+    
+        return (PromptWorker.text2,)    
  
 
     def unique(self, positive, alphabetical_sorting, weather,photography_style, Cinematography_Styles):
@@ -103,8 +104,14 @@ class PromptWorker:
         if photography_style != "Off":
             unique_list.append(photography_style)
 
-        if alphabetical_sorting == "True":
-            unique_list.sort()
-
         for i in unique_list:
             PromptWorker.text2+= i + ", "           
+
+        if alphabetical_sorting == "True":
+            self.sorting(PromptWorker.text2.split(","))     
+            
+    def sorting(self, text_list):
+        PromptWorker.text2 = ", ".join(sorted([x.strip() for x in text_list if x.strip()], key=lambda x: x.lower()))
+        return PromptWorker.text2                 
+
+        

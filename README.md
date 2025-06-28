@@ -1,6 +1,7 @@
 # Prompt Worker
 
 ![Screenshot](/workflows/scr.png)
+![Screenshot](/workflows/scr2.png)
 
 ### [English]
 
@@ -18,6 +19,9 @@ To fine-tune the removal function, the user can specify unwanted characters and 
 Workflow can be found in the workflows directory
 
 A small feature: put a dash in the token and you will temporarily disable it.
+
+Updated June 28, 2025:
+* Fixed a bug with alphabetical sorting that occurred due to new nodes
 
 Updated June 27, 2025:
 * Added styles: weather, photographic style, cinematic style
@@ -57,6 +61,9 @@ Updated August 13, 2024:
 Воркфлоу можете найти в директории workflows
 
 Небольшая фича, поставьте знак тире - в токене и вы его временно отключите.
+
+Обновление от 28 июня 2025:
+* Исправлен баг с алфавитной сортировкой, который возник из-за новых нод
 
 Обновление от 27 июня 2025:
 * Добавлены стили: погода, фотографический стиль, кинематографический стиль
