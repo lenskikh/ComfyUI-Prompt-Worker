@@ -22,6 +22,7 @@ class PromptWorker:
                     "negative_char": ("STRING", {"forceInput": True}),
                     "blacklist": ("STRING", {"forceInput": True}),
                     "alphabetical_sorting": (["False", "True"],),
+                    "lora": (["False", "True"],),
                     "weather": ([type_of_weather]),
                     "photography_style": (Photography_Styles,),
                     "Cinematography_Styles": (Cinematography_Styles,),
@@ -33,21 +34,23 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, alphabetical_sorting, weather, photography_style,Cinematography_Styles):
+    def clean_prompt(self, positive, negative_char, blacklist, lora, alphabetical_sorting, weather, photography_style,Cinematography_Styles):
 
         blacklist = blacklist.lower()
 
         #delete any weight like 1.3 and etc.
-        if ":" in positive:
-            positive = re.sub(r':\d+\.\d+', '', positive)
-        # weight 1 without digit after
-        if ":" in positive:
-            positive = re.sub(r':\d+', '', positive)
-        # with space symbol token: 1.3
-        if ":" in positive:
-            positive = re.sub(r':\s*\d+\.\d+', '', positive)  
-        if "lora" in positive:
-            positive = re.sub(r'<lora:[^>]*>', '', positive)                        
+        if lora == "True":
+            
+            if ":" in positive:
+                positive = re.sub(r':\d+\.\d+', '', positive)
+            # weight 1 without digit after
+            if ":" in positive:
+                positive = re.sub(r':\d+', '', positive)
+            # with space symbol token: 1.3
+            if ":" in positive:
+                positive = re.sub(r':\s*\d+\.\d+', '', positive)  
+            if "lora" in positive:
+                positive = re.sub(r'<lora:[^>]*>', '', positive)                        
 
         positive = positive.lower().strip()
         
