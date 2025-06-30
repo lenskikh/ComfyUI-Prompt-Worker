@@ -34,41 +34,8 @@
         "Node name for S&R": "RandomNoise"
       },
       "widgets_values": [
-        488986584164358,
+        189348508292103,
         "randomize"
-      ]
-    },
-    {
-      "id": 16,
-      "type": "KSamplerSelect",
-      "pos": [
-        396,
-        530
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "SAMPLER",
-          "type": "SAMPLER",
-          "links": [
-            19
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.41",
-        "Node name for S&R": "KSamplerSelect"
-      },
-      "widgets_values": [
-        "euler"
       ]
     },
     {
@@ -237,7 +204,7 @@
         106
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -273,7 +240,7 @@
         200
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -310,7 +277,7 @@
         106
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -346,7 +313,7 @@
         200
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -403,44 +370,79 @@
       ]
     },
     {
-      "id": 17,
-      "type": "BasicScheduler",
+      "id": 34,
+      "type": "Text Translate",
       "pos": [
-        394.535888671875,
-        640
+        -424.3758239746094,
+        569.4323120117188
       ],
       "size": [
-        315,
-        106
+        400,
+        200
       ],
       "flags": {},
-      "order": 10,
+      "order": 5,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 42
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "name": "SIGMAS",
-          "type": "SIGMAS",
+          "name": "translated_text",
+          "type": "STRING",
           "links": [
-            20
+            70
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.41",
-        "Node name for S&R": "BasicScheduler"
+        "aux_id": "DrStone71/ComfyUI-Prompt-Translator",
+        "ver": "8d4ba650d95eac1a54dcf5077f2e1dab288a809f",
+        "Node name for S&R": "Text Translate"
       },
       "widgets_values": [
-        "simple",
-        16,
-        1
+        "древний замок, солдаты в старых одеяних перед входом,",
+        "ru - Russian (Русский)",
+        "en - English"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "ShowText|pysssss",
+      "pos": [
+        15.881800651550293,
+        567.1906127929688
+      ],
+      "size": [
+        317.03155517578125,
+        173.58551025390625
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "2 womans in the royal room, an ancient castle, break, documentary photography, partly cloudy, raw, sofa, soldiers in old robes in front of the entrance"
       ]
     },
     {
@@ -475,71 +477,19 @@
         "Node name for S&R": "UnetLoaderGGUF"
       },
       "widgets_values": [
-        "flux1-dev-Q4_0.gguf"
+        "fluxunchained-dev-q4-0.gguf"
       ]
     },
     {
-      "id": 39,
-      "type": "Prompt Worker",
+      "id": 40,
+      "type": "easy positive",
       "pos": [
-        14.15499496459961,
-        303.96429443359375
-      ],
-      "size": [
-        313.6402282714844,
-        170
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "STRING",
-          "link": 72
-        },
-        {
-          "name": "negative_char",
-          "type": "STRING",
-          "link": 60
-        },
-        {
-          "name": "blacklist",
-          "type": "STRING",
-          "link": 63
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            62
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Prompt-Worker",
-        "ver": "9795f7dc51b5a51eb8261752787a3a669b03ee73",
-        "Node name for S&R": "Prompt Worker"
-      },
-      "widgets_values": [
-        "True",
-        "Partly cloudy",
-        "High contrast",
-        "Wes Anderson Style"
-      ]
-    },
-    {
-      "id": 34,
-      "type": "Text Translate",
-      "pos": [
-        -424.3758239746094,
-        569.4323120117188
+        -417.23492431640625,
+        823.8956298828125
       ],
       "size": [
         400,
-        200
+        223.10000610351562
       ],
       "flags": {},
       "order": 7,
@@ -547,71 +497,30 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "translated_text",
+          "name": "positive",
           "type": "STRING",
           "links": [
-            70
+            71
           ]
         }
       ],
       "properties": {
-        "aux_id": "DrStone71/ComfyUI-Prompt-Translator",
-        "ver": "8d4ba650d95eac1a54dcf5077f2e1dab288a809f",
-        "Node name for S&R": "Text Translate"
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.0",
+        "Node name for S&R": "easy positive"
       },
       "widgets_values": [
-        "древний замок, солдаты в старых одеяних перед входом,",
-        "ru - Russian (Русский)",
-        "en - English"
-      ]
-    },
-    {
-      "id": 32,
-      "type": "ShowText|pysssss",
-      "pos": [
-        14.399982452392578,
-        528.1997680664062
+        "2 girls in the Royal room, <lora:sisters_v2:0.8>, <lora:HBB2:1>, Sofa, BREAK, sofa, Sofa"
       ],
-      "size": [
-        317.03155517578125,
-        173.58551025390625
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 62
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            51
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-custom-scripts",
-        "ver": "1.2.5",
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        ", High contrast, Partly cloudy, Wes Anderson Style, an ancient castle, pastel colors, soldiers in old robes in front of the entrance, "
-      ]
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 47,
       "type": "easy promptConcat",
       "pos": [
-        18.068267822265625,
-        757.306396484375
+        17.49553680419922,
+        786.2520141601562
       ],
       "size": [
         312.8999938964844,
@@ -658,8 +567,8 @@
       "id": 10,
       "type": "VAELoader",
       "pos": [
-        22.767404556274414,
-        877.83544921875
+        22.576494216918945,
+        908.5993041992188
       ],
       "size": [
         305.70001220703125,
@@ -685,15 +594,15 @@
         "Node name for S&R": "VAELoader"
       },
       "widgets_values": [
-        "FLUX1\\ae.safetensors"
+        "ae.safetensors"
       ]
     },
     {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
-        25.57021713256836,
-        995.3171997070312
+        26.097488403320312,
+        1021.5352172851562
       ],
       "size": [
         301.70001220703125,
@@ -732,15 +641,56 @@
       "widgets_values": []
     },
     {
-      "id": 40,
-      "type": "easy positive",
+      "id": 17,
+      "type": "BasicScheduler",
       "pos": [
-        -417.23492431640625,
-        823.8956298828125
+        394.535888671875,
+        640
       ],
       "size": [
-        400,
-        223.10000610351562
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.41",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "beta",
+        20,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "KSamplerSelect",
+      "pos": [
+        396,
+        530
+      ],
+      "size": [
+        315,
+        58
       ],
       "flags": {},
       "order": 9,
@@ -748,23 +698,75 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "positive",
-          "type": "STRING",
+          "name": "SAMPLER",
+          "type": "SAMPLER",
           "links": [
-            71
+            19
           ]
         }
       ],
       "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.0",
-        "Node name for S&R": "easy positive"
+        "cnr_id": "comfy-core",
+        "ver": "0.3.41",
+        "Node name for S&R": "KSamplerSelect"
       },
       "widgets_values": [
-        "pastel colors, "
+        "euler"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "Prompt Worker",
+      "pos": [
+        14.15499496459961,
+        303.96429443359375
       ],
-      "color": "#232",
-      "bgcolor": "#353"
+      "size": [
+        313.6402282714844,
+        218
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 72
+        },
+        {
+          "name": "negative_char",
+          "type": "STRING",
+          "link": 60
+        },
+        {
+          "name": "blacklist",
+          "type": "STRING",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "9795f7dc51b5a51eb8261752787a3a669b03ee73",
+        "Node name for S&R": "Prompt Worker"
+      },
+      "widgets_values": [
+        "True",
+        "True",
+        "True",
+        "partly cloudy",
+        "documentary photography",
+        "raw"
+      ]
     }
   ],
   "links": [
@@ -925,13 +927,13 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.620921323059155,
+      "scale": 0.6830134553650707,
       "offset": [
-        1131.3298882040242,
-        11.894379392317058
+        902.6007727192796,
+        -64.23366690706575
       ]
     },
-    "frontendVersion": "1.22.2",
+    "frontendVersion": "1.23.4",
     "node_versions": {
       "ComfyUI-Prompt-Worker": "eaaf32a4952faca1491f4f86ca967d1605b191c7",
       "comfy-core": "v0.3.10",

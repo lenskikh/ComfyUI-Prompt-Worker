@@ -23,6 +23,7 @@ class PromptWorker:
                     "blacklist": ("STRING", {"forceInput": True}),
                     "alphabetical_sorting": (["False", "True"],),
                     "lora": (["False", "True"],),
+                    "lower_case": (["False", "True"],),
                     "weather": ([type_of_weather]),
                     "photography_style": (Photography_Styles,),
                     "Cinematography_Styles": (Cinematography_Styles,),
@@ -34,7 +35,7 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, lora, alphabetical_sorting, weather, photography_style,Cinematography_Styles):
+    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, weather, photography_style,Cinematography_Styles):
 
         blacklist = blacklist.lower()
 
@@ -52,7 +53,11 @@ class PromptWorker:
             if "lora" in positive:
                 positive = re.sub(r'<lora:[^>]*>', '', positive)                        
 
-        positive = positive.lower().strip()
+        if lower_case == "True":
+            #convert to lower case
+            positive = positive.lower()
+        else:
+            positive = positive.strip()
         
         PromptWorker.text2 = ""
 
@@ -78,19 +83,21 @@ class PromptWorker:
                 replace_words = blackwords.split("|")
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
-        self.unique(positive, alphabetical_sorting,weather,photography_style,Cinematography_Styles)
+        self.unique(positive, lower_case, alphabetical_sorting,weather,photography_style,Cinematography_Styles)
     
         return (PromptWorker.text2,)    
  
 
-    def unique(self, positive, alphabetical_sorting, weather,photography_style, Cinematography_Styles):
+    def unique(self, positive, lower_case, alphabetical_sorting, weather,photography_style, Cinematography_Styles):
 
         word_list = positive.split(",")
         text3 = list()
         
         for word in word_list:
             word = word.strip()
-            word = word.lower()
+            if "lower_case" == "True":
+                word = word.lower() 
+                
             if "-" in word:
                 pass
             else:
@@ -114,7 +121,18 @@ class PromptWorker:
             self.sorting(PromptWorker.text2.split(","))     
             
     def sorting(self, text_list):
-        PromptWorker.text2 = ", ".join(sorted([x.strip() for x in text_list if x.strip()], key=lambda x: x.lower()))
+        processed_list = []
+        # Iterate through each item in text_list
+        for x in text_list:
+            stripped = x.strip()
+            if stripped:  # Check if the string is not empty after stripping
+                processed_list.append(stripped)
+
+        # Sort the list case-insensitively
+        processed_list.sort()
+
+        # Join the sorted list with ", " separator
+        PromptWorker.text2 = ", ".join(processed_list)
         return PromptWorker.text2                 
 
         

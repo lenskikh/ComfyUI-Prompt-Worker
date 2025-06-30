@@ -20,6 +20,9 @@ Workflow can be found in the workflows directory
 
 A small feature: put a dash in the token and you will temporarily disable it.
 
+Updated June 30, 2025:
+* Disabling lore is now optional. Conversion to lowercase is also optional. Made at the request of the user.
+
 Updated June 28, 2025:
 * Fixed a bug with alphabetical sorting that occurred due to new nodes
 
@@ -61,6 +64,9 @@ Updated August 13, 2024:
 Воркфлоу можете найти в директории workflows
 
 Небольшая фича, поставьте знак тире - в токене и вы его временно отключите.
+
+Обновление от 30 июня 2025:
+* Отключение лоры теперь опционально. Конверсия в нижний регистр тоже опционально. Сделано по просьбе пользователя.
 
 Обновление от 28 июня 2025:
 * Исправлен баг с алфавитной сортировкой, который возник из-за новых нод
