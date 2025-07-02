@@ -1,0 +1,641 @@
+{
+  "id": "4eb32dc8-b6cd-4a82-ac78-618eb2258f45",
+  "revision": 0,
+  "last_node_id": 20,
+  "last_link_id": 25,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "easy preSampling",
+      "pos": [
+        1015,
+        71
+      ],
+      "size": [
+        360,
+        242
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 5
+        },
+        {
+          "label": "image_to_latent",
+          "name": "image_to_latent",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "latent",
+          "name": "latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "slot_index": 0,
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy preSampling"
+      },
+      "widgets_values": [
+        6,
+        2,
+        "dpmpp_sde",
+        "karras",
+        1,
+        290371854520086,
+        "randomize"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "ShowText|pysssss",
+      "pos": [
+        235,
+        70
+      ],
+      "size": [
+        346.8851013183594,
+        243.44845581054688
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "beautiful woman, black eyes, close up, cute, cute  actress, gorgeous model, open mounth, photo of slim girl model, popular makeup, portrait, sea background, sharpa woman detailed face in a white sweater posing for a photo, smile, teeth"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "easy negative",
+      "pos": [
+        612,
+        751
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "Standart Negative",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "text, watermark, worst quality, bad hands, embedding:badhandv4, "
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "easy kSampler",
+      "pos": [
+        1016,
+        361
+      ],
+      "size": [
+        360,
+        550
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 6
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Save",
+        0,
+        "ComfyUI",
+        ""
+      ]
+    },
+    {
+      "id": 16,
+      "type": "easy negative",
+      "pos": [
+        208.47003173828125,
+        632.3299560546875
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "Negative symbols",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "!,?"
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 17,
+      "type": "easy negative",
+      "pos": [
+        210.47000122070312,
+        841.5400390625
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "Blacklist words",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "chinese, korean, south, "
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 5,
+      "type": "easy a1111Loader",
+      "pos": [
+        610,
+        70
+      ],
+      "size": [
+        380,
+        370
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "optional_lora_stack",
+          "name": "optional_lora_stack",
+          "shape": 7,
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "optional_controlnet_stack",
+          "shape": 7,
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "STRING",
+          "widget": {
+            "name": "positive"
+          },
+          "link": 22
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "widget": {
+            "name": "negative"
+          },
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "slot_index": 0,
+          "links": [
+            5
+          ]
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy a1111Loader"
+      },
+      "widgets_values": [
+        "agxl_V2.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "768 x 1024",
+        512,
+        512,
+        "Positive",
+        "Negative",
+        1,
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "type": "Prompt Worker",
+      "pos": [
+        262.7900390625,
+        359.7900085449219
+      ],
+      "size": [
+        315,
+        218
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 25
+        },
+        {
+          "name": "negative_char",
+          "type": "STRING",
+          "link": 17
+        },
+        {
+          "name": "blacklist",
+          "type": "STRING",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "b45c71da1b47a8cd80c24bf4d9961a82caf66b07",
+        "Node name for S&R": "Prompt Worker"
+      },
+      "widgets_values": [
+        "True",
+        "True",
+        "True",
+        "Off",
+        "Off",
+        "Off"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy positive",
+      "pos": [
+        -181.3399658203125,
+        67.45975494384766
+      ],
+      "size": [
+        380,
+        180
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        "a woman! detailed? face in a white sweater posing for a photo, open mounth, teeth, smile, black eyes, gorgeous model, cute korean actress, photo of slim girl model, beautiful woman, popular makeup, sea background, portrait, close up, cute Chinese"
+      ],
+      "color": "#346434",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 20,
+      "type": "easy promptConcat",
+      "pos": [
+        617.9130859375,
+        508.7234191894531
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt1",
+          "shape": 7,
+          "type": "STRING",
+          "link": 23
+        },
+        {
+          "name": "prompt2",
+          "shape": 7,
+          "type": "STRING",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy promptConcat"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 19,
+      "type": "Text Translate",
+      "pos": [
+        -187.9466552734375,
+        306.6532897949219
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "translated_text",
+          "type": "STRING",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DrStone71/ComfyUI-Prompt-Translator",
+        "ver": "8d4ba650d95eac1a54dcf5077f2e1dab288a809f",
+        "Node name for S&R": "Text Translate"
+      },
+      "widgets_values": [
+        "резкое изображение ",
+        "auto - Auto-detect",
+        "en - English"
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      7,
+      0,
+      5,
+      3,
+      "STRING"
+    ],
+    [
+      5,
+      5,
+      0,
+      8,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      6,
+      8,
+      0,
+      9,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      17,
+      16,
+      0,
+      15,
+      1,
+      "STRING"
+    ],
+    [
+      18,
+      17,
+      0,
+      15,
+      2,
+      "STRING"
+    ],
+    [
+      21,
+      15,
+      0,
+      18,
+      0,
+      "STRING"
+    ],
+    [
+      22,
+      18,
+      0,
+      5,
+      2,
+      "STRING"
+    ],
+    [
+      23,
+      19,
+      0,
+      20,
+      0,
+      "STRING"
+    ],
+    [
+      24,
+      6,
+      0,
+      20,
+      1,
+      "STRING"
+    ],
+    [
+      25,
+      20,
+      0,
+      15,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.1,
+      "offset": [
+        391.17397545625414,
+        38.24386043881715
+      ]
+    },
+    "note": "<p>在<b>LoadImage (base64)</b>节点上右键可切换成默认加载图片节点</p>",
+    "frontendVersion": "1.23.4"
+  },
+  "version": 0.4
+}
