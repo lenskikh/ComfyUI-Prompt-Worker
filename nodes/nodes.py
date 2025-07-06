@@ -1,4 +1,5 @@
 import re
+import json
 
         
 class PromptWorker:
@@ -8,7 +9,12 @@ class PromptWorker:
     @classmethod
     def INPUT_TYPES(cls):
 
-        type_of_weather = ("Off", "cloudy", "foggy", "hail", "partly cloudy", "rainy", "sleet", "snowy", "stormy", "sunny", "windy")
+
+        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/scene.json', 'r', encoding='utf-8') as file:
+            scene = json.load(file)
+
+        print(scene)
+
         Photography_Styles = ("Off", "abstract photography", "artistic photography", "black and white", "documentary photography", 
                               "fashion photography", "high contrast", "landscape photography", "low contrast", "macro photography", 
                               "minimalist photography", "night photography", "portrait photography", "street photography")
@@ -24,7 +30,7 @@ class PromptWorker:
                     "alphabetical_sorting": (["False", "True"],),
                     "lora": (["False", "True"],),
                     "lower_case": (["False", "True"],),
-                    "weather": ([type_of_weather]),
+                    "scene": ([scene]),
                     "photography_style": (Photography_Styles,),
                     "Cinematography_Styles": (Cinematography_Styles,),
                     }
@@ -35,7 +41,7 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, weather, photography_style,Cinematography_Styles):
+    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, scene, photography_style,Cinematography_Styles):
 
         blacklist = blacklist.lower()
 
@@ -83,12 +89,12 @@ class PromptWorker:
                 replace_words = blackwords.split("|")
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
-        self.unique(positive, lower_case, alphabetical_sorting,weather,photography_style,Cinematography_Styles)
+        self.unique(positive, lower_case, alphabetical_sorting,scene,photography_style,Cinematography_Styles)
     
         return (PromptWorker.text2,)    
  
 
-    def unique(self, positive, lower_case, alphabetical_sorting, weather,photography_style, Cinematography_Styles):
+    def unique(self, positive, lower_case, alphabetical_sorting, scene,photography_style, Cinematography_Styles):
 
         word_list = positive.split(",")
         text3 = list()
@@ -108,8 +114,8 @@ class PromptWorker:
         if Cinematography_Styles != "Off":
             unique_list.append(Cinematography_Styles)
 
-        if weather != "Off":
-            unique_list.append(weather)
+        if scene != "Off":
+            unique_list.append(scene)
 
         if photography_style != "Off":
             unique_list.append(photography_style)

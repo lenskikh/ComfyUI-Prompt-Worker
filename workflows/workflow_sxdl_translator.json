@@ -1,149 +1,9 @@
 {
   "id": "4eb32dc8-b6cd-4a82-ac78-618eb2258f45",
   "revision": 0,
-  "last_node_id": 20,
+  "last_node_id": 21,
   "last_link_id": 25,
   "nodes": [
-    {
-      "id": 8,
-      "type": "easy preSampling",
-      "pos": [
-        1015,
-        71
-      ],
-      "size": [
-        360,
-        242
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "pipe",
-          "name": "pipe",
-          "type": "PIPE_LINE",
-          "link": 5
-        },
-        {
-          "label": "image_to_latent",
-          "name": "image_to_latent",
-          "shape": 7,
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "label": "latent",
-          "name": "latent",
-          "shape": 7,
-          "type": "LATENT",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "label": "pipe",
-          "name": "pipe",
-          "type": "PIPE_LINE",
-          "slot_index": 0,
-          "links": [
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy preSampling"
-      },
-      "widgets_values": [
-        6,
-        2,
-        "dpmpp_sde",
-        "karras",
-        1,
-        290371854520086,
-        "randomize"
-      ]
-    },
-    {
-      "id": 18,
-      "type": "ShowText|pysssss",
-      "pos": [
-        235,
-        70
-      ],
-      "size": [
-        346.8851013183594,
-        243.44845581054688
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 21
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "shape": 6,
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-custom-scripts",
-        "ver": "1.2.5",
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "beautiful woman, black eyes, close up, cute, cute  actress, gorgeous model, open mounth, photo of slim girl model, popular makeup, portrait, sea background, sharpa woman detailed face in a white sweater posing for a photo, smile, teeth"
-      ]
-    },
-    {
-      "id": 7,
-      "type": "easy negative",
-      "pos": [
-        612,
-        751
-      ],
-      "size": [
-        380,
-        160
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "negative",
-          "name": "negative",
-          "type": "STRING",
-          "links": [
-            4
-          ]
-        }
-      ],
-      "title": "Standart Negative",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy negative"
-      },
-      "widgets_values": [
-        "text, watermark, worst quality, bad hands, embedding:badhandv4, "
-      ],
-      "color": "#af3535",
-      "bgcolor": "#533"
-    },
     {
       "id": 9,
       "type": "easy kSampler",
@@ -200,15 +60,50 @@
       ]
     },
     {
-      "id": 16,
-      "type": "easy negative",
+      "id": 19,
+      "type": "Text Translate",
       "pos": [
-        208.47003173828125,
-        632.3299560546875
+        -187.94667053222656,
+        304.8351135253906
       ],
       "size": [
-        380,
-        160
+        377.272705078125,
+        196.36363220214844
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "translated_text",
+          "type": "STRING",
+          "links": [
+            23
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "DrStone71/ComfyUI-Prompt-Translator",
+        "ver": "8d4ba650d95eac1a54dcf5077f2e1dab288a809f",
+        "Node name for S&R": "Text Translate"
+      },
+      "widgets_values": [
+        "",
+        "auto - Auto-detect",
+        "en - English"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "easy positive",
+      "pos": [
+        -185.88540649414062,
+        66.55066680908203
+      ],
+      "size": [
+        376.3636474609375,
+        184.5454559326172
       ],
       "flags": {},
       "order": 1,
@@ -216,64 +111,87 @@
       "inputs": [],
       "outputs": [
         {
-          "label": "negative",
-          "name": "negative",
+          "label": "positive",
+          "name": "positive",
           "type": "STRING",
           "slot_index": 0,
           "links": [
-            17
+            24
           ]
         }
       ],
-      "title": "Negative symbols",
       "properties": {
         "cnr_id": "comfyui-easy-use",
         "ver": "1.3.1",
-        "Node name for S&R": "easy negative"
+        "Node name for S&R": "easy positive"
       },
       "widgets_values": [
-        "!,?"
+        "Luxurious Elegance, luxury product style, surrealist dystopian art. Close-up of a porcelain doll's face made of matte white porcelain and rough white marble. Black lips, red eyes, golden ritual drawings and tattoos on her face, adorned with intricate jewelry. A white silk handkerchief drapes her head. Bleak, post-apocalyptic, somber, and dramatic atmosphere. Highly detailed, dreamlike, mysterious, and provocative. Black and white graphite pencil sketch, symbolic and intricate. Elegant, sophisticated, high-end, and luxurious. Dramatic lighting, sharp focus, illuminated background. Divine, scenic, and artistic. Balanced tones, futuristic, stunning, and magical. Delicate, creative, and unique. Flowing, shiny, and ornate. Best quality, ultra-detailed, photorealistic, and opulent."
       ],
-      "color": "#af3535",
-      "bgcolor": "#533"
+      "color": "#346434",
+      "bgcolor": "#353"
     },
     {
-      "id": 17,
-      "type": "easy negative",
+      "id": 8,
+      "type": "easy preSampling",
       "pos": [
-        210.47000122070312,
-        841.5400390625
+        1015,
+        71
       ],
       "size": [
-        380,
-        160
+        360,
+        242
       ],
       "flags": {},
-      "order": 2,
+      "order": 9,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 5
+        },
+        {
+          "label": "image_to_latent",
+          "name": "image_to_latent",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "label": "latent",
+          "name": "latent",
+          "shape": 7,
+          "type": "LATENT",
+          "link": null
+        }
+      ],
       "outputs": [
         {
-          "label": "negative",
-          "name": "negative",
-          "type": "STRING",
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
           "slot_index": 0,
           "links": [
-            18
+            6
           ]
         }
       ],
-      "title": "Blacklist words",
       "properties": {
         "cnr_id": "comfyui-easy-use",
         "ver": "1.3.1",
-        "Node name for S&R": "easy negative"
+        "Node name for S&R": "easy preSampling"
       },
       "widgets_values": [
-        "chinese, korean, south, "
-      ],
-      "color": "#af3535",
-      "bgcolor": "#533"
+        30,
+        3.5,
+        "res_multistep",
+        "exponential",
+        1,
+        550142615218764,
+        "randomize"
+      ]
     },
     {
       "id": 5,
@@ -367,11 +285,213 @@
       ]
     },
     {
+      "id": 18,
+      "type": "ShowText|pysssss",
+      "pos": [
+        235,
+        70
+      ],
+      "size": [
+        346.8851013183594,
+        243.44845581054688
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "adorned with intricate jewelry a white silk handkerchief drapes her head bleak, and artistic balanced tones, and dramatic atmosphere highly detailed, and luxurious dramatic lighting, and magical delicate, and opulent, and ornate best quality, and unique flowing, creative, dramatic shadows, dreamlike, fashion photography, futuristic, golden ritual drawings and tattoos on her face, illuminated background divine, luxurious elegance, luxury product style, mysterious, photorealistic, red eyes, scenic, sharp focus, shiny, somber, sophisticated, stunning, symbolic and intricate elegant, vivid colors of graphite pencil sketch"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "easy promptConcat",
+      "pos": [
+        254.52447509765625,
+        679.9641723632812
+      ],
+      "size": [
+        270,
+        78
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt1",
+          "shape": 7,
+          "type": "STRING",
+          "link": 23
+        },
+        {
+          "name": "prompt2",
+          "shape": 7,
+          "type": "STRING",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy promptConcat"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 7,
+      "type": "easy negative",
+      "pos": [
+        -187.1514892578125,
+        556.1390380859375
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "Standart Negative",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "low quality, worst quality, bad quality, low detailed, blurry, bad hands, poor quality, mannequin, doll, disfigured, jpg, toy, bad anatomy, missing limbs, missing fingers, 3d, cgi, open mouth, "
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 16,
+      "type": "easy negative",
+      "pos": [
+        -190.77891540527344,
+        772.3659057617188
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            17
+          ]
+        }
+      ],
+      "title": "Negative symbols",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "!,?,."
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 17,
+      "type": "easy negative",
+      "pos": [
+        -190.33766174316406,
+        1004.361572265625
+      ],
+      "size": [
+        380,
+        160
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            18
+          ]
+        }
+      ],
+      "title": "Blacklist words",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy negative"
+      },
+      "widgets_values": [
+        "chinese, korean, south, and provocative black and white graphite pencil sketch|vivid colors of graphite pencil sketch"
+      ],
+      "color": "#af3535",
+      "bgcolor": "#533"
+    },
+    {
       "id": 15,
       "type": "Prompt Worker",
       "pos": [
-        262.7900390625,
-        359.7900085449219
+        242.4689483642578,
+        363.1766662597656
       ],
       "size": [
         315,
@@ -417,128 +537,8 @@
         "True",
         "True",
         "Off",
-        "Off",
-        "Off"
-      ]
-    },
-    {
-      "id": 6,
-      "type": "easy positive",
-      "pos": [
-        -181.3399658203125,
-        67.45975494384766
-      ],
-      "size": [
-        380,
-        180
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "positive",
-          "name": "positive",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            24
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy positive"
-      },
-      "widgets_values": [
-        "a woman! detailed? face in a white sweater posing for a photo, open mounth, teeth, smile, black eyes, gorgeous model, cute korean actress, photo of slim girl model, beautiful woman, popular makeup, sea background, portrait, close up, cute Chinese"
-      ],
-      "color": "#346434",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 20,
-      "type": "easy promptConcat",
-      "pos": [
-        617.9130859375,
-        508.7234191894531
-      ],
-      "size": [
-        270,
-        78
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt1",
-          "shape": 7,
-          "type": "STRING",
-          "link": 23
-        },
-        {
-          "name": "prompt2",
-          "shape": 7,
-          "type": "STRING",
-          "link": 24
-        }
-      ],
-      "outputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "links": [
-            25
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy promptConcat"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 19,
-      "type": "Text Translate",
-      "pos": [
-        -187.9466552734375,
-        306.6532897949219
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "translated_text",
-          "type": "STRING",
-          "links": [
-            23
-          ]
-        }
-      ],
-      "properties": {
-        "aux_id": "DrStone71/ComfyUI-Prompt-Translator",
-        "ver": "8d4ba650d95eac1a54dcf5077f2e1dab288a809f",
-        "Node name for S&R": "Text Translate"
-      },
-      "widgets_values": [
-        "резкое изображение ",
-        "auto - Auto-detect",
-        "en - English"
+        "fashion photography",
+        "dramatic shadows"
       ]
     }
   ],
@@ -628,14 +628,14 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 1,
       "offset": [
-        391.17397545625414,
-        38.24386043881715
+        137.79148478417073,
+        10.86567814811275
       ]
     },
-    "note": "<p>在<b>LoadImage (base64)</b>节点上右键可切换成默认加载图片节点</p>",
-    "frontendVersion": "1.23.4"
+    "frontendVersion": "1.23.4",
+    "note": "<p>在<b>LoadImage (base64)</b>节点上右键可切换成默认加载图片节点</p>"
   },
   "version": 0.4
 }
