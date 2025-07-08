@@ -13,15 +13,14 @@ class PromptWorker:
         with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/scene.json', 'r', encoding='utf-8') as file:
             scene = json.load(file)
 
-        print(scene)
+        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/photography.json', 'r', encoding='utf-8') as file:
+            Photography_Styles = json.load(file)         
 
-        Photography_Styles = ("Off", "abstract photography", "artistic photography", "black and white", "documentary photography", 
-                              "fashion photography", "high contrast", "landscape photography", "low contrast", "macro photography", 
-                              "minimalist photography", "night photography", "portrait photography", "street photography")
-        Cinematography_Styles = ("Off","blockbuster style", "dramatic shadows", "dreamlike", "dynamic shots", "emotional", 
-                                 "exaggerated shadows", "experimental style", "film noir", "illogical visuals", "jump cuts style", 
-                                 "lighting and framing", "neo-noir", "new wave style", "pastel colors", "raw", "surrealism", 
-                                 "symmetrical framing", "unfiltered storytelling", "wes anderson style" )
+        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/cinematography.json', 'r', encoding='utf-8') as file:
+            Cinematography_Styles = json.load(file)   
+
+        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/colors.json', 'r', encoding='utf-8') as file:
+            colors = json.load(file)                             
               
         return {"required": {
                     "positive": ("STRING", {"forceInput": True}),
@@ -31,8 +30,9 @@ class PromptWorker:
                     "lora": (["False", "True"],),
                     "lower_case": (["False", "True"],),
                     "scene": ([scene]),
-                    "photography_style": (Photography_Styles,),
-                    "Cinematography_Styles": (Cinematography_Styles,),
+                    "photography_style": ([Photography_Styles]),
+                    "Cinematography_Styles": ([Cinematography_Styles]),
+                    "colors": ([colors]),
                     }
                 }
 
@@ -41,7 +41,7 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, scene, photography_style,Cinematography_Styles):
+    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, scene, photography_style,Cinematography_Styles, colors):
 
         blacklist = blacklist.lower()
 
@@ -51,8 +51,6 @@ class PromptWorker:
         #double check if there is a dash in the positive prompt
         if "-" in positive:
             positive = re.sub(r'-', ' ', positive)            
-
-        #positive = positive.replace("-", " ")
 
         #delete any weight like 1.3 and etc.
         if lora == "True":
@@ -98,12 +96,12 @@ class PromptWorker:
                 replace_words = blackwords.split("|")
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
-        self.unique(positive, lower_case, alphabetical_sorting,scene,photography_style,Cinematography_Styles)
+        self.unique(positive, lower_case, alphabetical_sorting,scene,photography_style,Cinematography_Styles,colors)
     
         return (PromptWorker.text2,)    
  
 
-    def unique(self, positive, lower_case, alphabetical_sorting, scene,photography_style, Cinematography_Styles):
+    def unique(self, positive, lower_case, alphabetical_sorting, scene,photography_style, Cinematography_Styles, colors):
 
         word_list = positive.split(",")
         text3 = list()
@@ -128,6 +126,9 @@ class PromptWorker:
 
         if photography_style != "Off":
             unique_list.append(photography_style)
+
+        if colors != "Off":
+            unique_list.append(colors)
 
         for i in unique_list:
             PromptWorker.text2+= i + ", "           
