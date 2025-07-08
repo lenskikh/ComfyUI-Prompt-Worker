@@ -45,6 +45,15 @@ class PromptWorker:
 
         blacklist = blacklist.lower()
 
+        if "-" in positive:
+            positive = re.sub(r'-', ' ', positive)
+
+        #double check if there is a dash in the positive prompt
+        if "-" in positive:
+            positive = re.sub(r'-', ' ', positive)            
+
+        #positive = positive.replace("-", " ")
+
         #delete any weight like 1.3 and etc.
         if lora == "True":
             

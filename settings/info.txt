@@ -37,3 +37,150 @@ Courtroom Scene – Legal drama, arguments, verdicts.
 Party Scene – Social gathering with multiple interactions.
 Isolated Scene – A character is alone (e.g., survival, introspection).
 Dream/Hallucination Scene – Unreal or distorted reality.
+
+
+################ COLORS ################
+
+1. Primary Colors:
+
+Red
+Blue
+Yellow
+
+2. Secondary Colors:
+
+Green (Blue + Yellow)
+Orange (Red + Yellow)
+Purple/Violet (Red + Blue)
+
+(Created by mixing two primary colors.)
+
+3. Tertiary Colors:
+
+(Mixing a primary and a secondary color.)
+
+Red-Orange
+Yellow-Orange
+Yellow-Green
+Blue-Green
+Blue-Violet
+Red-Violet
+
+4. Neutral Colors:
+
+White
+Black
+Gray
+Beige
+Brown
+Ivory
+Taupe
+
+5. Warm Colors:
+
+Red
+Orange
+Yellow
+Gold
+Amber
+Coral
+Maroon
+
+6. Cool Colors:
+
+Blue
+Green
+Purple
+Teal
+Mint
+Lavender
+Indigo
+
+7. Pastel Colors
+(Soft, light tones with high luminance.)
+
+Pink (Pastel Pink)
+Mint Green
+Lavender
+Baby Blue
+Peach
+Lemon Chiffon
+
+8. Earth Tones (Natural Colors)
+Olive Green
+
+Terracotta
+Sienna
+Khaki
+Sand
+Moss Green
+
+9. Metallic Colors
+
+Gold
+Silver
+Bronze
+Copper
+Rose Gold
+Champagne
+
+10. Neon/Bright Colors
+
+Neon Pink
+Electric Blue
+Lime Green
+Hot Pink
+Fluorescent Yellow
+Bright Purple
+
+11. Shades (Darkened Colors)
+
+Navy Blue (Dark Blue)
+Burgundy (Dark Red)
+Forest Green (Dark Green)
+Charcoal (Dark Gray)
+
+12. Tints (Lightened Colors)
+
+Sky Blue (Light Blue)
+Blush Pink (Light Pink)
+Mint (Light Green)
+Lavender (Light Purple)
+
+13. Monochromatic Colors
+(Variations of a single hue in different shades, tints, and tones.)
+
+Light Blue,
+Dark Blue
+Pale Pink,
+Deep Pink
+
+14. Analogous Colors
+(Colors next to each other on the color wheel.)
+
+Blue, Blue-Green, Green
+Red, Red-Orange, Orange
+
+15. Complementary Colors
+(Opposite colors on the color wheel.)
+
+Red & Green
+Blue & Orange
+Yellow & Purple
+
+16. Rainbow Colors (ROYGBIV)
+
+Red
+Orange
+Yellow
+Green
+Blue
+Indigo
+Violet
+
+17. Rare/Exotic Colors
+
+Vantablack (Ultra-black)
+YInMn Blue (Bright, vibrant blue)
+Mummy Brown (Historical pigment)
+Dragon’s Blood (Deep red)
