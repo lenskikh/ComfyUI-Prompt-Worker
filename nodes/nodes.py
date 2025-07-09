@@ -48,9 +48,10 @@ class PromptWorker:
         if "-" in positive:
             positive = re.sub(r'-', ' ', positive)
 
-        #double check if there is a dash in the positive prompt
-        if "-" in positive:
-            positive = re.sub(r'-', ' ', positive)            
+        if "." in positive:
+            positive = re.sub(r'\.', ',', positive)  
+
+        print("Positive:", positive)          
 
         #delete any weight like 1.3 and etc.
         if lora == "True":
@@ -96,12 +97,12 @@ class PromptWorker:
                 replace_words = blackwords.split("|")
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
-        self.unique(positive, lower_case, alphabetical_sorting,scene,photography_style,Cinematography_Styles,colors)
+        self.unique(positive, alphabetical_sorting,scene,photography_style,Cinematography_Styles,colors)
     
         return (PromptWorker.text2,)    
  
 
-    def unique(self, positive, lower_case, alphabetical_sorting, scene,photography_style, Cinematography_Styles, colors):
+    def unique(self, positive, alphabetical_sorting, scene,photography_style, Cinematography_Styles, colors):
 
         word_list = positive.split(",")
         text3 = list()
