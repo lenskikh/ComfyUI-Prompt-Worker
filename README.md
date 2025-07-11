@@ -30,6 +30,9 @@ Updated June 27, 2025:
 * Added styles: weather, photographic style, cinematic style
 * Added a new diagram to the workflows folder that shows how you can combine translation and handwritten prompts
 
+Updated July 10, 2025:
+Style settings are completely moved to external files. You can now edit the lists yourself
+
 Updated June 25, 2025
 * Minor update. Add scheme with translator node.
 
