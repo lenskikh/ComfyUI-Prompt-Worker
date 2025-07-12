@@ -36,7 +36,7 @@ Updated July 10, 2025:
 * Style settings are completely moved to external files. You can now edit the lists yourself
 
 Updated July 11, 2025:
-* Two separate nodes were created. One for styles, the second for clothes.
+* Two separate nodes were created. One for styles, the second for clothes. Now three nodes. The first node is the main one, it removes duplicates, sorts alphabetically, replaces tokens, removes tokens from the blacklist. The second node and the third node are optional. The second one is responsible for styles. The third one is responsible for the type of clothing. The lists are located in external files in the settings directory.
 
 
 ### Installation
@@ -77,6 +77,9 @@ Updated July 11, 2025:
 
 Обновление от 10 июля 2025:
 * Настройки стилей полностью вынесены во внешние файлы. Вы теперь сами можете редактировать списки. Находится в директории settings
+
+Обновление от 11 июля 2025:
+* Были созданы две отдельные ноды. Одна по стилям, вторая по одежде. Теперь три ноды. Первая нода основная убирает дубликаты, сортирует по алфавиту, заменяет токены, убирает токены из черного списка. Вторая нода конструирует стили. Вторая отвечает за стили. Третья за тип одежды. Списки находятся во внешних файлах в директории settings.
 
 ### Установка
 
