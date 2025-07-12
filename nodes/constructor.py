@@ -28,10 +28,10 @@ class PromptConstructor:
                     "photography_style": (Photography_Styles,),
                     "Cinematography_Styles": (Cinematography_Styles,),
                     "colors": (colors,),
-                    "body": (body,),
                 },
                 "optional":{
                     "clothes": ("STRING", {"forceInput": True}), 
+                    "body": ("STRING", {"forceInput": True}), 
             },  
             }
 
@@ -40,7 +40,7 @@ class PromptConstructor:
     CATEGORY = "Prompt Worker"
 
   
-    def constructor(self, scene, photography_style,Cinematography_Styles, colors,body,**kwargs):
+    def constructor(self, scene, photography_style,Cinematography_Styles, colors,**kwargs):
 
 
         styles = list()
@@ -56,14 +56,13 @@ class PromptConstructor:
             styles.append(photography_style)
 
         if colors != "Off":
-            styles.append(colors)
-
-        if body != "Off":
-            styles.append(body)    
+            styles.append(colors)  
 
         if "clothes" in kwargs:
-            print(kwargs['clothes']) 
-            styles.append(kwargs['clothes'])                    
+            styles.append(kwargs['clothes'])   
+
+        if "body" in kwargs:
+            styles.append(kwargs['body'])                                 
 
         for i in styles:
             constructor_string+= i + ',' 
