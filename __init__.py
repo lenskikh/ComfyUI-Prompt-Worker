@@ -1,8 +1,12 @@
-from .nodes.nodes import *
+from .nodes.worker import *
+from .nodes.constructor import *
+from .nodes.clothes import *
 
 NODE_CLASS_MAPPINGS = { 
 
     "Prompt Worker": PromptWorker,
+    "Prompt Сonstructor": PromptConstructor,
+    "Prompt Clothes": ClothesConstructor,
 
     }
     

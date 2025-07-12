@@ -1,7 +1,6 @@
 # Prompt Worker
 
 ![Screenshot](/workflows/scr.png)
-![Screenshot](/workflows/scr_gguf.png)
 
 ### [English]
 
@@ -35,6 +34,9 @@ Updated June 25, 2025
 
 Updated July 10, 2025:
 * Style settings are completely moved to external files. You can now edit the lists yourself
+
+Updated July 11, 2025:
+* Two separate nodes were created. One for styles, the second for clothes.
 
 
 ### Installation

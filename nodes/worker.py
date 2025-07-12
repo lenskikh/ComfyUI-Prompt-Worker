@@ -8,19 +8,7 @@ class PromptWorker:
 
     @classmethod
     def INPUT_TYPES(cls):
-
-
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/scene.json', 'r', encoding='utf-8') as file:
-            scene = json.load(file)
-
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/photography.json', 'r', encoding='utf-8') as file:
-            Photography_Styles = json.load(file)         
-
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/cinematography.json', 'r', encoding='utf-8') as file:
-            Cinematography_Styles = json.load(file)   
-
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/colors.json', 'r', encoding='utf-8') as file:
-            colors = json.load(file)                             
+                        
               
         return {"required": {
                     "positive": ("STRING", {"forceInput": True}),
@@ -29,10 +17,6 @@ class PromptWorker:
                     "alphabetical_sorting": (["False", "True"],),
                     "lora": (["False", "True"],),
                     "lower_case": (["False", "True"],),
-                    "scene": ([scene]),
-                    "photography_style": ([Photography_Styles]),
-                    "Cinematography_Styles": ([Cinematography_Styles]),
-                    "colors": ([colors]),
                     }
                 }
 
@@ -41,7 +25,7 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting, scene, photography_style,Cinematography_Styles, colors):
+    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting):
 
         blacklist = blacklist.lower()
 
@@ -97,12 +81,12 @@ class PromptWorker:
                 replace_words = blackwords.split("|")
                 positive = positive.replace(replace_words[0], replace_words[1]) 
 
-        self.unique(positive, alphabetical_sorting,scene,photography_style,Cinematography_Styles,colors)
+        self.unique(positive, alphabetical_sorting)
     
         return (PromptWorker.text2,)    
  
 
-    def unique(self, positive, alphabetical_sorting, scene,photography_style, Cinematography_Styles, colors):
+    def unique(self, positive, alphabetical_sorting):
 
         word_list = positive.split(",")
         text3 = list()
@@ -118,18 +102,7 @@ class PromptWorker:
                 text3.append(word)
 
         unique_list = list(dict.fromkeys(text3))
-            
-        if Cinematography_Styles != "Off":
-            unique_list.append(Cinematography_Styles)
-
-        if scene != "Off":
-            unique_list.append(scene)
-
-        if photography_style != "Off":
-            unique_list.append(photography_style)
-
-        if colors != "Off":
-            unique_list.append(colors)
+        
 
         for i in unique_list:
             PromptWorker.text2+= i + ", "           
