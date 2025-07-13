@@ -1,4 +1,7 @@
 import json
+import os
+
+# Получаем путь к текущему файлу ноды
 
         
 class BodyConstructor:
@@ -8,7 +11,7 @@ class BodyConstructor:
     def INPUT_TYPES(cls):
 
 
-        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+        path = os.path.dirname(os.path.realpath(__file__)) + '/lists_of_types/'
 
         with open(path + 'hair_types.json', 'r') as file:
             hair_types = json.load(file)

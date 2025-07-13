@@ -1,4 +1,5 @@
 import json
+import os
 
         
 class PromptConstructor:
@@ -7,7 +8,7 @@ class PromptConstructor:
     @classmethod
     def INPUT_TYPES(cls):
 
-        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+        path = os.path.dirname(os.path.realpath(__file__)) + '/lists_of_types/'
 
         with open(path + 'scene.json', 'r', encoding='utf-8') as file:
             scene = json.load(file)

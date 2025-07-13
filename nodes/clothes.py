@@ -1,4 +1,5 @@
 import json
+import os
 
         
 class ClothesConstructor:
@@ -8,7 +9,7 @@ class ClothesConstructor:
     def INPUT_TYPES(cls):
 
 
-        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+        path = os.path.dirname(os.path.realpath(__file__)) + '/lists_of_types/'
 
         with open(path + 'outerwear.json', 'r', encoding='utf-8') as file:
             outerwear = json.load(file)
