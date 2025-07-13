@@ -7,19 +7,21 @@ class PromptConstructor:
     @classmethod
     def INPUT_TYPES(cls):
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/scene.json', 'r', encoding='utf-8') as file:
+        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+
+        with open(path + 'scene.json', 'r', encoding='utf-8') as file:
             scene = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/photography.json', 'r', encoding='utf-8') as file:
+        with open(path + 'photography.json', 'r', encoding='utf-8') as file:
             Photography_Styles = json.load(file)         
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/cinematography.json', 'r', encoding='utf-8') as file:
+        with open(path + 'cinematography.json', 'r', encoding='utf-8') as file:
             Cinematography_Styles = json.load(file)   
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/colors.json', 'r', encoding='utf-8') as file:
+        with open(path + 'colors.json', 'r', encoding='utf-8') as file:
             colors = json.load(file)         
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/body.json', 'r', encoding='utf-8') as file:
+        with open(path + 'body.json', 'r', encoding='utf-8') as file:
             body = json.load(file)                    
                           
               

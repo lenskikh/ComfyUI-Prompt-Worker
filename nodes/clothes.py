@@ -7,34 +7,37 @@ class ClothesConstructor:
     @classmethod
     def INPUT_TYPES(cls):
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/outerwear.json', 'r', encoding='utf-8') as file:
+
+        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+
+        with open(path + 'outerwear.json', 'r', encoding='utf-8') as file:
             outerwear = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/tops.json', 'r', encoding='utf-8') as file:
+        with open(path + 'tops.json', 'r', encoding='utf-8') as file:
             tops = json.load(file)      
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/bottoms.json', 'r', encoding='utf-8') as file:
+        with open(path + 'bottoms.json', 'r', encoding='utf-8') as file:
             bottoms = json.load(file)  
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/dresses.json', 'r', encoding='utf-8') as file:
+        with open(path + 'dresses.json', 'r', encoding='utf-8') as file:
             dresses = json.load(file)          
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/underwear.json', 'r', encoding='utf-8') as file:
+        with open(path + 'underwear.json', 'r', encoding='utf-8') as file:
             underwear = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/sportswear.json', 'r', encoding='utf-8') as file:
+        with open(path + 'sportswear.json', 'r', encoding='utf-8') as file:
             sportswear = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/footwear.json', 'r', encoding='utf-8') as file:
+        with open(path + 'footwear.json', 'r', encoding='utf-8') as file:
             footwear = json.load(file)    
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/headwear.json', 'r', encoding='utf-8') as file:
+        with open(path + 'headwear.json', 'r', encoding='utf-8') as file:
             headwear = json.load(file)    
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/accessories.json', 'r', encoding='utf-8') as file:
+        with open(path + 'accessories.json', 'r', encoding='utf-8') as file:
             accessories = json.load(file)     
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/traditional.json', 'r', encoding='utf-8') as file:
+        with open(path + 'traditional.json', 'r', encoding='utf-8') as file:
             traditional = json.load(file)                                
                           
               

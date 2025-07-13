@@ -7,28 +7,31 @@ class BodyConstructor:
     @classmethod
     def INPUT_TYPES(cls):
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/hair_types.json', 'r') as file:
+
+        path = './custom_nodes/ComfyUI-Prompt-Worker/settings/'
+
+        with open(path + 'hair_types.json', 'r') as file:
             hair_types = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/body.json', 'r') as file:
+        with open(path + 'body.json', 'r') as file:
             body = json.load(file)              
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/eyes.json', 'r') as file:
+        with open(path + 'eyes.json', 'r') as file:
             eyes = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/skins.json', 'r') as file:
+        with open(path + 'skins.json', 'r') as file:
             skins = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/cut.json', 'r') as file:
+        with open(path + 'cut.json', 'r') as file:
             haircut = json.load(file)   
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/nose.json', 'r') as file:
+        with open(path + 'nose.json', 'r') as file:
             nose = json.load(file)    
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/cheekbones.json', 'r') as file:
+        with open(path + 'cheekbones.json', 'r') as file:
             cheekbones = json.load(file)
 
-        with open('./custom_nodes/ComfyUI-Prompt-Worker/settings/makeup.json', 'r') as file:
+        with open(path + 'makeup.json', 'r') as file:
             makeup = json.load(file)                
             
                           
