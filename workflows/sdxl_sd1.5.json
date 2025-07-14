@@ -1,8 +1,8 @@
 {
   "id": "4eb32dc8-b6cd-4a82-ac78-618eb2258f45",
   "revision": 0,
-  "last_node_id": 29,
-  "last_link_id": 36,
+  "last_node_id": 31,
+  "last_link_id": 41,
   "nodes": [
     {
       "id": 18,
@@ -16,7 +16,7 @@
         243.44845581054688
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -179,7 +179,7 @@
           "name": "translated_text",
           "type": "STRING",
           "links": [
-            23
+            37
           ]
         }
       ],
@@ -253,7 +253,7 @@
           "type": "STRING",
           "slot_index": 0,
           "links": [
-            24
+            38
           ]
         }
       ],
@@ -280,7 +280,7 @@
         242
       ],
       "flags": {},
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -326,9 +326,314 @@
         "res_multistep",
         "exponential",
         1,
-        156988967238178,
+        876526150472656,
         "randomize"
       ]
+    },
+    {
+      "id": 9,
+      "type": "easy kSampler",
+      "pos": [
+        954.9397583007812,
+        500.49200439453125
+      ],
+      "size": [
+        364.4545593261719,
+        557.8016357421875
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 6
+        },
+        {
+          "label": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "pipe",
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": null
+        },
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.1",
+        "Node name for S&R": "easy kSampler"
+      },
+      "widgets_values": [
+        "Save",
+        0,
+        "ComfyUI",
+        ""
+      ]
+    },
+    {
+      "id": 26,
+      "type": "Prompt Сonstructor",
+      "pos": [
+        649.2178955078125,
+        494.2247314453125
+      ],
+      "size": [
+        265.400390625,
+        174
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clothes",
+          "shape": 7,
+          "type": "STRING",
+          "link": 32
+        },
+        {
+          "name": "body",
+          "shape": 7,
+          "type": "STRING",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "1f27add6c0110a6b50b7294d20347fa8afc8b585",
+        "Node name for S&R": "Prompt Сonstructor"
+      },
+      "widgets_values": [
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 27,
+      "type": "Prompt Clothes",
+      "pos": [
+        652.0087280273438,
+        725.8333129882812
+      ],
+      "size": [
+        266.0856628417969,
+        274
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "1f27add6c0110a6b50b7294d20347fa8afc8b585",
+        "Node name for S&R": "Prompt Clothes"
+      },
+      "widgets_values": [
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "Off",
+        "dirndl"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 28,
+      "type": "Prompt Body",
+      "pos": [
+        651.1602783203125,
+        1061.2724609375
+      ],
+      "size": [
+        265.4545593261719,
+        226
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "a28e3355bae78d8a985403928773855fc4a89010",
+        "Node name for S&R": "Prompt Body"
+      },
+      "widgets_values": [
+        "blonde hairstyle",
+        "pixie cut",
+        "fit body",
+        "blue eyes",
+        "almond skin",
+        "roman nose",
+        "flat cheekbones",
+        "graphic eyeliner makeup"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 15,
+      "type": "Prompt Worker",
+      "pos": [
+        235.1734161376953,
+        563.6034545898438
+      ],
+      "size": [
+        356.01654052734375,
+        146
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 41
+        },
+        {
+          "name": "negative_char",
+          "type": "STRING",
+          "link": 17
+        },
+        {
+          "name": "blacklist",
+          "type": "STRING",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "b45c71da1b47a8cd80c24bf4d9961a82caf66b07",
+        "Node name for S&R": "Prompt Worker"
+      },
+      "widgets_values": [
+        "True",
+        "True",
+        "True"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 31,
+      "type": "Prompt Merger",
+      "pos": [
+        278.0138244628906,
+        393.8465881347656
+      ],
+      "size": [
+        167.8300018310547,
+        86
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prompt1",
+          "shape": 7,
+          "type": "STRING",
+          "link": 37
+        },
+        {
+          "name": "prompt2",
+          "shape": 7,
+          "type": "STRING",
+          "link": 38
+        },
+        {
+          "name": "prompt3",
+          "shape": 7,
+          "type": "STRING",
+          "link": 39
+        },
+        {
+          "name": "prompt4",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "title": "Merger Positive",
+      "properties": {
+        "cnr_id": "ComfyUI-Prompt-Worker",
+        "ver": "2114311e55575f3578fda0a4ddaaa04e4afd6d09",
+        "Node name for S&R": "Prompt Merger"
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 5,
@@ -342,7 +647,7 @@
         370
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -406,7 +711,7 @@
         "Node name for S&R": "easy a1111Loader"
       },
       "widgets_values": [
-        "Deliberate_v6.safetensors",
+        "agxl_V2.safetensors",
         "Baked VAE",
         -1,
         "None",
@@ -422,107 +727,11 @@
       ]
     },
     {
-      "id": 20,
-      "type": "easy promptConcat",
-      "pos": [
-        264.96728515625,
-        380.1509094238281
-      ],
-      "size": [
-        270,
-        78
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt1",
-          "shape": 7,
-          "type": "STRING",
-          "link": 23
-        },
-        {
-          "name": "prompt2",
-          "shape": 7,
-          "type": "STRING",
-          "link": 24
-        }
-      ],
-      "outputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "links": [
-            29
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy promptConcat"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 25,
-      "type": "easy promptConcat",
-      "pos": [
-        270.8507385253906,
-        524.1610107421875
-      ],
-      "size": [
-        270,
-        78
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prompt1",
-          "shape": 7,
-          "type": "STRING",
-          "link": 29
-        },
-        {
-          "name": "prompt2",
-          "shape": 7,
-          "type": "STRING",
-          "link": 30
-        }
-      ],
-      "outputs": [
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "links": [
-            31
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy promptConcat"
-      },
-      "widgets_values": [
-        ""
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
       "id": 22,
       "type": "easy promptConcat",
       "pos": [
-        268.2276916503906,
-        667.3414916992188
+        238.24623107910156,
+        824.0652465820312
       ],
       "size": [
         270,
@@ -564,244 +773,6 @@
       ],
       "color": "#233",
       "bgcolor": "#355"
-    },
-    {
-      "id": 15,
-      "type": "Prompt Worker",
-      "pos": [
-        249.69332885742188,
-        806.8139038085938
-      ],
-      "size": [
-        356.01654052734375,
-        146
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "positive",
-          "type": "STRING",
-          "link": 31
-        },
-        {
-          "name": "negative_char",
-          "type": "STRING",
-          "link": 17
-        },
-        {
-          "name": "blacklist",
-          "type": "STRING",
-          "link": 28
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [
-            21
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Prompt-Worker",
-        "ver": "b45c71da1b47a8cd80c24bf4d9961a82caf66b07",
-        "Node name for S&R": "Prompt Worker"
-      },
-      "widgets_values": [
-        "True",
-        "True",
-        "True"
-      ]
-    },
-    {
-      "id": 26,
-      "type": "Prompt Сonstructor",
-      "pos": [
-        617.7578735351562,
-        491.80474853515625
-      ],
-      "size": [
-        265.400390625,
-        151
-      ],
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clothes",
-          "shape": 7,
-          "type": "STRING",
-          "link": 32
-        },
-        {
-          "name": "body",
-          "shape": 7,
-          "type": "STRING",
-          "link": 33
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            30
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Prompt-Worker",
-        "ver": "1f27add6c0110a6b50b7294d20347fa8afc8b585",
-        "Node name for S&R": "Prompt Сonstructor"
-      },
-      "widgets_values": [
-        "Off",
-        "Off",
-        "Off",
-        "Off"
-      ]
-    },
-    {
-      "id": 27,
-      "type": "Prompt Clothes",
-      "pos": [
-        642.3284912109375,
-        696.7932739257812
-      ],
-      "size": [
-        266.0856628417969,
-        274
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            32
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Prompt-Worker",
-        "ver": "1f27add6c0110a6b50b7294d20347fa8afc8b585",
-        "Node name for S&R": "Prompt Clothes"
-      },
-      "widgets_values": [
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "Off",
-        "dirndl"
-      ]
-    },
-    {
-      "id": 28,
-      "type": "Prompt Body",
-      "pos": [
-        643.9004516601562,
-        1043.1226806640625
-      ],
-      "size": [
-        265.4545593261719,
-        226
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            33
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-Prompt-Worker",
-        "ver": "a28e3355bae78d8a985403928773855fc4a89010",
-        "Node name for S&R": "Prompt Body"
-      },
-      "widgets_values": [
-        "blonde hairstyle",
-        "pixie cut",
-        "fit body",
-        "blue eyes",
-        "almond skin",
-        "roman nose",
-        "flat cheekbones",
-        "graphic eyeliner makeup"
-      ]
-    },
-    {
-      "id": 9,
-      "type": "easy kSampler",
-      "pos": [
-        954.9397583007812,
-        500.49200439453125
-      ],
-      "size": [
-        364.4545593261719,
-        557.8016357421875
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "pipe",
-          "name": "pipe",
-          "type": "PIPE_LINE",
-          "link": 6
-        },
-        {
-          "label": "model",
-          "name": "model",
-          "shape": 7,
-          "type": "MODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "label": "pipe",
-          "name": "pipe",
-          "type": "PIPE_LINE",
-          "links": null
-        },
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE",
-          "links": []
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.1",
-        "Node name for S&R": "easy kSampler"
-      },
-      "widgets_values": [
-        "Save",
-        0,
-        "ComfyUI",
-        ""
-      ]
     }
   ],
   "links": [
@@ -854,22 +825,6 @@
       "STRING"
     ],
     [
-      23,
-      19,
-      0,
-      20,
-      0,
-      "STRING"
-    ],
-    [
-      24,
-      6,
-      0,
-      20,
-      1,
-      "STRING"
-    ],
-    [
       26,
       17,
       0,
@@ -894,30 +849,6 @@
       "STRING"
     ],
     [
-      29,
-      20,
-      0,
-      25,
-      0,
-      "STRING"
-    ],
-    [
-      30,
-      26,
-      0,
-      25,
-      1,
-      "STRING"
-    ],
-    [
-      31,
-      25,
-      0,
-      15,
-      0,
-      "STRING"
-    ],
-    [
       32,
       27,
       0,
@@ -932,16 +863,48 @@
       26,
       1,
       "STRING"
+    ],
+    [
+      37,
+      19,
+      0,
+      31,
+      0,
+      "STRING"
+    ],
+    [
+      38,
+      6,
+      0,
+      31,
+      1,
+      "STRING"
+    ],
+    [
+      39,
+      26,
+      0,
+      31,
+      2,
+      "STRING"
+    ],
+    [
+      41,
+      31,
+      0,
+      15,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.8264462809917356,
+      "scale": 0.8264462809917354,
       "offset": [
-        677.8870558664913,
-        -200.24674353363352
+        516.3341946446662,
+        16.440831981971552
       ]
     },
     "frontendVersion": "1.23.4",

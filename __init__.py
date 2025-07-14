@@ -2,6 +2,7 @@ from .nodes.worker import *
 from .nodes.constructor import *
 from .nodes.clothes import *
 from .nodes.body import *
+from .nodes.prompt_merger import *
 
 NODE_CLASS_MAPPINGS = { 
 
@@ -9,6 +10,7 @@ NODE_CLASS_MAPPINGS = {
     "Prompt Сonstructor": PromptConstructor,
     "Prompt Clothes": ClothesConstructor,
     "Prompt Body": BodyConstructor,
+    "Prompt Merger": PromptMerger,
 
     }
     

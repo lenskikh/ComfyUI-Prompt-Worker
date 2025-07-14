@@ -22,8 +22,8 @@ class PromptConstructor:
         with open(path + 'colors.json', 'r', encoding='utf-8') as file:
             colors = json.load(file)         
 
-        with open(path + 'body.json', 'r', encoding='utf-8') as file:
-            body = json.load(file)                    
+        with open(path + 'custom_list.json', 'r', encoding='utf-8') as file:
+            custom_list = json.load(file)                    
                           
               
         return {"required": {
@@ -31,6 +31,7 @@ class PromptConstructor:
                     "photography_style": (Photography_Styles,),
                     "Cinematography_Styles": (Cinematography_Styles,),
                     "colors": (colors,),
+                    "custom_list": (custom_list,),
                 },
                 "optional":{
                     "clothes": ("STRING", {"forceInput": True}), 
@@ -65,7 +66,11 @@ class PromptConstructor:
             styles.append(kwargs['clothes'])   
 
         if "body" in kwargs:
-            styles.append(kwargs['body'])                                 
+            styles.append(kwargs['body'])        
+
+        if kwargs['custom_list'] != "Off":
+            styles.append(kwargs['custom_list'])   
+                        
 
         for i in styles:
             constructor_string+= i + ',' 

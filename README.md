@@ -41,6 +41,13 @@ Updated July 11, 2025:
 Updated July 12, 2025:
 * Added new node "body", you can choose body type, hairstyle, makeup and etc.
 
+Updated July 14, 2025:
+* Added a node that combines prompts from other nodes. This node has 4 inputs and automatically puts a comma at the end of the prompt.
+![Screenshot](/workflows/merge.png)
+
+* Added a custom list, the user can modify it in the file custom_list.json
+![Screenshot](/workflows/custom.png)
+
 ### Installation
 
 1. Go to the custom_nodes directory
@@ -85,6 +92,13 @@ Updated July 12, 2025:
 
 Обновление от 12 июля 2025:
 * Добавлена новая нода "тело", вы можете выбрать телосложение, прическу, макияж и так далее.
+
+Обновление от 14 июля 2025:
+* Добавлена нода, которая объядиняет промпты с других нод. Эта нода имеет 4 входа и автоматически ставит запятую в конце промпта. 
+![Screenshot](/workflows/merge.png)
+
+* Добавлен пользовательский список, пользователь может сам модифировать его в файле custom_list.json
+![Screenshot](/workflows/custom.png)
 
 ### Установка
 

@@ -1,7 +1,7 @@
 [project]
 name = "ComfyUI Prompt Worker"
-description = "Node:Prompt Worker. A text manipulation node for postprocessing of prompt."
-version = "2.0.0"
+description = "Node:Prompt Worker. A text manipulation node for postprocessing of prompt. Constructs prompt using various nodes"
+version = "3.0.0"
 license = {file = "LICENSE"}
 
 [project.urls]
