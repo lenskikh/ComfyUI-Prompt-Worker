@@ -11,12 +11,14 @@ class PromptWorker:
               
         return {"required": {
                     "positive": ("STRING", {"forceInput": True}),
-                    "negative_char": ("STRING", {"forceInput": True}),
-                    "blacklist": ("STRING", {"forceInput": True}),
                     "alphabetical_sorting": (["False", "True"],),
-                    "lora": (["False", "True"],),
+                    "remove_lora": (["False", "True"],),
                     "lower_case": (["False", "True"],),
-                    }
+                    },
+                "optional":{
+                    "negative_char": ("STRING", {"forceInput": True}), 
+                    "blacklist": ("STRING", {"forceInput": True}),
+            },                      
                 }
 
     RETURN_TYPES = ("STRING",)
@@ -24,9 +26,8 @@ class PromptWorker:
     CATEGORY = "Prompt Worker"
 
   
-    def clean_prompt(self, positive, negative_char, blacklist, lora, lower_case, alphabetical_sorting):
+    def clean_prompt(self, positive, remove_lora, lower_case, alphabetical_sorting, **kwargs):
 
-        blacklist = blacklist.lower()
 
         if "-" in positive:
             positive = re.sub(r'-', ' ', positive)
@@ -34,10 +35,8 @@ class PromptWorker:
         if "." in positive:
             positive = re.sub(r'\.', ',', positive)  
 
-        print("Positive:", positive)          
-
         #delete any weight like 1.3 and etc.
-        if lora == "True":
+        if remove_lora == "True":
             
             if ":" in positive:
                 positive = re.sub(r':\d+\.\d+', '', positive)
@@ -58,27 +57,33 @@ class PromptWorker:
         
         PromptWorker.text2 = ""
 
-        negative_char = negative_char.split(",")
+        if "negative_char" in kwargs:
+            negative_char = kwargs["negative_char"]        
+            negative_char = negative_char.split(",")
 
-        for negative_symbol in negative_char:
-            #remove space
-            negative_symbol = negative_symbol.strip()
+            for negative_symbol in negative_char:
+                #remove space
+                negative_symbol = negative_symbol.strip()
 
-            #check if one symbol is
-            if len(negative_symbol) == 1:
-                if negative_symbol == "'":
-                    positive = positive.replace("'", "")             
-                if negative_symbol in positive:
-                    negative_symbol_for_replace = eval("r'" + "["+negative_symbol+"]" + "'")
-                    positive =  re.sub(negative_symbol_for_replace,'', positive)
+                #check if one symbol is
+                if len(negative_symbol) == 1:
+                    if negative_symbol == "'":
+                        positive = positive.replace("'", "")             
+                    if negative_symbol in positive:
+                        negative_symbol_for_replace = eval("r'" + "["+negative_symbol+"]" + "'")
+                        positive =  re.sub(negative_symbol_for_replace,'', positive)
 
-        black_list = blacklist.split(",")
-        for blackwords in black_list:
-            blackwords = blackwords.strip()
-            positive = positive.replace(blackwords, "")     
-            if "|" in blackwords:
-                replace_words = blackwords.split("|")
-                positive = positive.replace(replace_words[0], replace_words[1]) 
+        if "blacklist" in kwargs:
+            blacklist = kwargs["blacklist"]
+            blacklist = blacklist.lower()
+
+            black_list = blacklist.split(",")
+            for blackwords in black_list:
+                blackwords = blackwords.strip()
+                positive = positive.replace(blackwords, "")     
+                if "|" in blackwords:
+                    replace_words = blackwords.split("|")
+                    positive = positive.replace(replace_words[0], replace_words[1]) 
 
         self.unique(positive, alphabetical_sorting)
     
